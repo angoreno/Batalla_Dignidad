@@ -23,7 +23,7 @@ public class Huevo {
 	}
 	
 	//solicita el ingreso de las coordenadas
-	public void ingreso_Cord() {
+	public void ingresoCord() {
 		
 		System.out.println("Ingrese coordenada de lanzamiento");
 		System.out.println("ingrese letra:");
@@ -89,6 +89,8 @@ public class Huevo {
 	
 	//entrega coordenada en una matriz
 	public int[] entregaCord() {
+		System.out.println(cord1);
+		System.out.println(cord2);
 		
 		int [] cord= {cord1,cord2};
 		

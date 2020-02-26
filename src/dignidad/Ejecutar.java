@@ -1,80 +1,96 @@
 package dignidad;
+
 import java.util.*;
+
 public class Ejecutar {
-	public Ejecutar() {
-	}
+
+	static Tablero tableroInicio = new Tablero();
+	static Caguano iniciaCaguano = new Caguano();
+	static Trupalla iniciaTrupalla = new Trupalla();
+	static Kromi iniciaKromi = new Kromi();
+	static Huevo iniciaHuevo = new Huevo();
+
 	public static void main(String[] args) {
 		// TODO Apéndice de método generado automáticamente
-		
-		//ejecutar de prueba
-		
-	
+
+		// ejecutar de prueba
+
 		Scanner entrada = new Scanner(System.in);
-		
+
 		int frenaBucle = 0;
-		int seleccion; 
+		int seleccion;
+
 		do {
-			
-			System.out.println("*********************************************"
-					+ "*************************");
-			System.out.println("Bienvenida/o a la batalla contra la cámara"
-					+ " secreta de Oscurilandia");
-			System.out.println("*********************************************"
-							+ "*************************");
+
+			System.out.println("*********************************************" + "*************************");
+			System.out.println("Bienvenida/o a la batalla contra la cámara" + " secreta de Oscurilandia");
+			System.out.println("*********************************************" + "*************************");
 			System.out.println("Seleccione Opción");
 			System.out.println("1.    Inicia Batalla");
 			System.out.println("2.    Salir");
-			System.out.println("*********************************************"
-					+ "*************************");
-		
-		
-			seleccion = entrada.nextInt(); 
-			
-	 
-			
-			
+			System.out.println("*********************************************" + "*************************");
+
+			seleccion = entrada.nextInt();
+
 			if (seleccion == 2) {
-				
+
 				System.out.println("*************** Hasta Pronto ****************");
 				frenaBucle = 1;
-				
-			}else if (seleccion == 1) {
-				
+
+			} else if (seleccion == 1) {
+
 				System.out.println("*************** Empieza la batalla ****************");
 				llamaTablero();
-				frenaBucle = 1; 
+				llamaCaguano();
+				tableroInicio.imprimirTabla(iniciaCaguano.tableroCaguano());
+				System.out.println();
+				llamaTrupalla();
+				tableroInicio.imprimirTabla(iniciaTrupalla.tableroTrupalla());
+				llamaKromi();
+				tableroInicio.imprimirTabla(iniciaKromi.tableroKromi());
+				llamaHuevo();
+				tableroInicio.recibeCord(iniciaHuevo.entregaCord());
 				
-				
-			}else {
-				
+
+				frenaBucle = 1;
+
+			} else {
+
 				System.out.println("Opción no disponible, vuelve a ingresar opción");
 			}
-			
-			
-		}while (frenaBucle != 1);
-		
-	
-	
+
+		} while (frenaBucle != 1);
+
 	}
-	
-	public static void llamaTablero() { //Un método que llama al tablero inicial
-		
-		Tablero tableroInicio = new Tablero(); 
-		
+
+	public static void llamaTablero() { // Un método que llama al tablero inicial
+
 		tableroInicio.muestraTab();
-	
-		
-		}
-	
-	public static void llamaHuevo() { //Un método que llama al tablero inicial
-		
-		Huevo iniciaHuevos = new Huevo(); 
-		
-		iniciaHuevos.ingreso_Cord();
-	
-		
-		}
-	
-	
-	
+
 	}
+
+	public static void llamaHuevo() { // Un método que llama al tablero inicial
+
+		iniciaHuevo.ingresoCord();
+
+	}
+
+	public static void llamaCaguano() { // Un método que llama al tablero inicial
+
+		iniciaCaguano.Caguano(tableroInicio.entregaTabla());
+
+	}
+
+	public static void llamaTrupalla() { // Un método que llama al tablero inicial
+
+		iniciaTrupalla.Trupalla(tableroInicio.entregaTabla());
+
+	}
+
+	public static void llamaKromi() { // Un método que llama al tablero inicial
+
+		iniciaKromi.kromi(tableroInicio.entregaTabla());
+
+	}
+
+}
