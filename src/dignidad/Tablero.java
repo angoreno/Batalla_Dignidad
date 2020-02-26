@@ -43,14 +43,12 @@ public class Tablero {
 
 		this.tab = tab;
 
-		imprimirTabla(tab);
+		//imprimirTabla(tab);
 
 
 	}
 
 	public String[][] entregaTabla() {
-
-		System.out.println("hola1");
 
 		String[][] tabla = {};
 
@@ -70,11 +68,5 @@ public class Tablero {
 		}
 	}
 	
-	public void recibeCord(int [] cord) {
-		
-		String a=tab[0];
-		String b=tab[1];
-		
-	}
-
+	
 }

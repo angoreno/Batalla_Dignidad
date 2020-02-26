@@ -42,15 +42,15 @@ public class Ejecutar {
 				System.out.println("*************** Empieza la batalla ****************");
 				llamaTablero();
 				llamaCaguano();
-				tableroInicio.imprimirTabla(iniciaCaguano.tableroCaguano());
 				System.out.println();
 				llamaTrupalla();
-				tableroInicio.imprimirTabla(iniciaTrupalla.tableroTrupalla());
+				System.out.println();
 				llamaKromi();
-				tableroInicio.imprimirTabla(iniciaKromi.tableroKromi());
-				llamaHuevo();
-				tableroInicio.recibeCord(iniciaHuevo.entregaCord());
+				System.out.println();
 				
+				//hacer bucle para solicitar a menos que el usuario desee salir
+				llamaHuevo();
+				System.out.println();
 
 				frenaBucle = 1;
 
@@ -71,25 +71,31 @@ public class Ejecutar {
 
 	public static void llamaHuevo() { // Un método que llama al tablero inicial
 
-		iniciaHuevo.ingresoCord();
+		iniciaHuevo.ingresoCord(tableroInicio.entregaTabla());
 
 	}
 
 	public static void llamaCaguano() { // Un método que llama al tablero inicial
 
 		iniciaCaguano.Caguano(tableroInicio.entregaTabla());
+		//tableroInicio.imprimirTabla(
+				iniciaCaguano.tableroCaguano();//);
 
 	}
 
 	public static void llamaTrupalla() { // Un método que llama al tablero inicial
 
 		iniciaTrupalla.Trupalla(tableroInicio.entregaTabla());
+		//tableroInicio.imprimirTabla(
+		iniciaTrupalla.tableroTrupalla();//);
 
 	}
 
 	public static void llamaKromi() { // Un método que llama al tablero inicial
 
 		iniciaKromi.kromi(tableroInicio.entregaTabla());
+		//tableroInicio.imprimirTabla(
+				iniciaKromi.tableroKromi();//);
 
 	}
 

@@ -2,34 +2,37 @@ package dignidad;
 import java.util.*;
 public class Huevo {
 	
-	/**
-	 * @author Isaac Pizarro C
-	 * @version 1.0
-	 * @fecha 24-02-2020
-	 */
-	
 	private int ubicacionFila;
 	private int ubicacionColumna;
 	private int puntaje;
 	private int cord1;
 	private int cord2;
 	
+	private String letraTab;
 	private String cordl;
+	private String [][] tabla;
 	
+	ArrayList litaPuntaje =new ArrayList();
 	Scanner leo=new Scanner(System.in);
+	
 
 	public Huevo() {
 		// TODO Apéndice de constructor generado automáticamente
 	}
 	
 	//solicita el ingreso de las coordenadas
-	public void ingresoCord() {
+	public void ingresoCord(String [][] tab) {
+		
+		tabla=tab;
+		impTab(tabla);
 		
 		System.out.println("Ingrese coordenada de lanzamiento");
 		System.out.println("ingrese letra:");
 		setCord(leo.next());
 		System.out.println("ingrese numero:");
-		cord2=leo.nextInt();		
+		cord2=leo.nextInt();	
+		
+		lanzamientoHuevo();
 	}
 	
 	//conviente la letra en numero para la coordenada
@@ -88,7 +91,7 @@ public class Huevo {
 	}
 	
 	//entrega coordenada en una matriz
-	public int[] entregaCord() {
+	private int[] entregaCord() {
 		System.out.println(cord1);
 		System.out.println(cord2);
 		
@@ -98,23 +101,58 @@ public class Huevo {
 	}
 	
 	//asigna puntaje segun letra de tablero
-	private void setPuntaje(String letra) {
+	private void letraLanzamineto(String letra) {
 		
-		int puntos;
+		int puntos=0;
+		int puntoCarro=0;
 		
 		switch (letra) {
 		case "K":
+			System.out.println("Le diste a una Kromi");
 			puntos=3;
 			break;
 		case "C":
+			System.out.println("Le diste a un Caguano");
 			puntos=2;
 			break;
 		case "T":
+			System.out.println("Le diste a una Trupalla");
+			puntos=1;
+			break;
+		case "~":
+			System.out.println("Le diste a nada, mejora tu punteria");
+			puntos=1;
+			break;
+		case "H":
+			System.out.println("Aburrido..., No tires donde mismo");
 			puntos=1;
 			break;
 		}
-		
-		
+		puntaje=puntos;
 	}
 
+	private void lanzamientoHuevo() {
+		
+		
+		letraTab=tabla[cord1][cord2];
+		//System.out.println(letraTab);
+		letraLanzamineto(letraTab);
+		//System.out.println(puntaje);
+		
+		tabla[cord1][cord2]="H";
+		
+	}
+	
+	private void impTab(String[][] tab) {
+		
+		for (int i=0;i<16;i++) {
+			for (int j=0;j<16;j++) {
+				System.out.print("["+tab[i][j]+"]");
+			}
+			System.out.println();
+		}
+		
+	}
+	
 }
+

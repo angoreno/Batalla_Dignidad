@@ -23,8 +23,6 @@ public class Trupalla extends Carro {
 			a = 1 + corde.nextInt(15);
 			b = 1 + corde.nextInt(15);
 			
-			System.out.println(a + b);
-			
 			if (tab[a][b].equals("~")) {
 			
 				String letra = "T";
