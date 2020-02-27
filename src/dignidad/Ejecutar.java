@@ -3,6 +3,13 @@ package dignidad;
 import java.util.*;
 
 public class Ejecutar {
+	
+	/**
+	 * Llama a metodos de las diferentes clases
+	 * Imprime instrucciones
+	 * Entrada y salida a juego
+	 * Validación de entrada y salida
+	 */
 
 	static Tablero tableroInicio = new Tablero();
 	static Caguano iniciaCaguano = new Caguano();

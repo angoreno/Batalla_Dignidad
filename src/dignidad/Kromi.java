@@ -3,6 +3,12 @@ package dignidad;
 import java.util.*;
 
 public class Kromi extends Carro {
+	
+	/**
+	 * Kromi
+	 * Atributos y metodos Kromi
+	 * Ubicación en tablero y creación de vehiculos de Kromi
+	 */
 
 	private int anoFabri = 1942;
 	private String marca = "Marca Chancho";

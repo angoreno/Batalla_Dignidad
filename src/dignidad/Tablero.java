@@ -3,13 +3,13 @@ package dignidad;
 import java.util.*;
 
 public class Tablero {
-	// Arraylist????
-	// ArrayList<String> huevos = new ArrayList<String>();// las jugadas de huevo o
-	// cada oportunidad?? no sabemos la
-	// cantidad
-	// arreglo es para las ubicaciones de los vehiculos wque son =18
-	// arreglo?????
-	// String [] ubicacionCarros;//ubicacion de cada carro formato (numero,numero)
+	
+	/**
+	 * Creación tablero 15x15
+	 * Impresión de tabla
+	 * Posiciones asignadas de manera aleatoria
+	 */
+	
 	int cord1 = 0;
 	int cord2 = 0;
 	int info = 0;

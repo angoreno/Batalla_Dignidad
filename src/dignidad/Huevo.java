@@ -3,6 +3,13 @@ package dignidad;
 import java.util.*;
 
 public class Huevo {
+	
+	/**
+	 * Entrega tablero con coordenadas
+	 * Solicita coordenadas para lanzamiento de huevos
+	 * Entrega puntaje 
+	 * imprime "H" en coordenadas de huevo
+	 */
 
 	private int ubicacionFila;
 	private int ubicacionColumna;

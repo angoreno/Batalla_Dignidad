@@ -1,6 +1,10 @@
 package dignidad;
 
 public class Vida {
+	
+	/**
+	 * Cuenta puntos y comprueba la eliminación de los vehiculos
+	 */
 
 	int vidaKromi1;
 	int vidaKromi2 = 3;

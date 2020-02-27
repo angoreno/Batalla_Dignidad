@@ -3,6 +3,14 @@ package dignidad;
 import java.util.*;
 
 public class Caguano extends Carro {
+	
+	/**
+	 * *@author Paula Carrasco, Javiera Dominguez, Isaac Pizarro, Emannuel Vergara
+	 *@Versión 1.0
+	 * Caguano
+	 * Atributos y metodos Caguano
+	 * Ubicación en tablero y creación de vehiculos de caguano
+	 */
 
 	private int alcanceTiro = 10;
 	private String colorConfeti = "rojo";

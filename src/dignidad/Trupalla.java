@@ -3,6 +3,12 @@ package dignidad;
 import java.util.*;
 
 public class Trupalla extends Carro {
+	
+	/**
+	 * Trupalla
+	 * Atributos y metodos Caguano
+	 * Ubicación en tablero y creación de vehiculos de Trupalla
+	 */
 
 	private String tabla[][];
 
