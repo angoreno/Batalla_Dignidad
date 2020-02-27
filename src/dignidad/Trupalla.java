@@ -7,6 +7,7 @@ public class Trupalla extends Carro {
 	private String tabla[][];
 
 	Random corde = new Random();
+	ArrayList<String> trupallaUbi = new ArrayList<String>();
 
 	public Trupalla() {
 
@@ -22,16 +23,19 @@ public class Trupalla extends Carro {
 
 			a = 1 + corde.nextInt(15);
 			b = 1 + corde.nextInt(15);
-			
+
 			if (tab[a][b].equals("~")) {
-			
+
 				String letra = "T";
 				tab[a][b] = letra;
 				cont = cont + 1;
-			
+
 				tab = tab;
+
+				trupallaUbi.add(cont + "," + a + "," + b);
+
 			}
-			 
+
 		} while (cont < 10);
 
 		tabla = tab;
@@ -41,5 +45,10 @@ public class Trupalla extends Carro {
 	public String[][] tableroTrupalla() {
 
 		return tabla;
+	}
+
+	public ArrayList<String> entregaListaTrupalla() {
+
+		return trupallaUbi;
 	}
 }

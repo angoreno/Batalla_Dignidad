@@ -10,6 +10,7 @@ public class Caguano extends Carro {
 	private String tabla[][];
 
 	Random corde = new Random();
+	ArrayList<String> caguanoUbi = new ArrayList<String>();
 
 	public Caguano() {
 
@@ -32,9 +33,15 @@ public class Caguano extends Carro {
 				tab[a][b + 1] = "C";
 				cont = cont + 1;
 				tab = tab;
+				
+				caguanoUbi.add(cont+","+a+","+b);
+				b++;
+				caguanoUbi.add(cont+","+a+","+b);
+				
 			}
 		} while (cont < 5);
-
+		
+		
 		tabla = tab;
 
 	}
@@ -43,4 +50,11 @@ public class Caguano extends Carro {
 
 		return tabla;
 	}
+	
+	public ArrayList<String> entregaListaCaguano(){
+	
+		return caguanoUbi;
+	}
+		
+		
 }

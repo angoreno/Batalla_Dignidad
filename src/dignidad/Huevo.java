@@ -8,12 +8,15 @@ public class Huevo {
 	private int cord1;
 	private int cord2;
 	
+	private String letracord;
 	private String letraTab;
 	private String cordl;
 	private String [][] tabla;
 	
 	ArrayList litaPuntaje =new ArrayList();
 	Scanner leo=new Scanner(System.in);
+	Ejecutar ejecuta=new Ejecutar();
+	Vida vida=new Vida();
 	
 
 	public Huevo() {
@@ -28,11 +31,22 @@ public class Huevo {
 		
 		System.out.println("Ingrese coordenada de lanzamiento");
 		System.out.println("ingrese letra:");
-		setCord(leo.next());
+		letracord=leo.next();
+		if(letracord.equals("0")) {
+			System.out.println("");
+			System.out.println("Partida finalizada anticipadamente");
+			System.out.println("");
+			ejecuta.ejecutaLanzamiento();
+			
+		}else {
+		setCord(letracord);
 		System.out.println("ingrese numero:");
 		cord2=leo.nextInt();	
 		
 		lanzamientoHuevo();
+		ingresoCord(tabla);
+		}
+		//desea otro lanzamiento?
 	}
 	
 	//conviente la letra en numero para la coordenada
@@ -92,8 +106,9 @@ public class Huevo {
 	
 	//entrega coordenada en una matriz
 	private int[] entregaCord() {
-		System.out.println(cord1);
-		System.out.println(cord2);
+		
+		//System.out.println(cord1);
+		//System.out.println(cord2);
 		
 		int [] cord= {cord1,cord2};
 		
@@ -110,6 +125,8 @@ public class Huevo {
 		case "K":
 			System.out.println("Le diste a una Kromi");
 			puntos=3;
+			vida.vidaKromi(entregaCord());
+			
 			break;
 		case "C":
 			System.out.println("Le diste a un Caguano");
@@ -120,12 +137,12 @@ public class Huevo {
 			puntos=1;
 			break;
 		case "~":
-			System.out.println("Le diste a nada, mejora tu punteria");
-			puntos=1;
+			System.out.println("Le diste a nada, mejora tu puntería");
+			puntos=0;
 			break;
 		case "H":
-			System.out.println("Aburrido..., No tires donde mismo");
-			puntos=1;
+			System.out.println("Aburrido..., no lances en el mismo lugar");
+			puntos=0;
 			break;
 		}
 		puntaje=puntos;
