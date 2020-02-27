@@ -9,6 +9,9 @@ public class Ejecutar {
 	static Trupalla iniciaTrupalla = new Trupalla();
 	static Kromi iniciaKromi = new Kromi();
 	static Huevo iniciaHuevo = new Huevo();
+	static String entCorKromi1;
+	static String entCorKromi2;
+	static String entCorKromi3;
 
 	public static void main(String[] args) {
 		// TODO Apéndice de método generado automáticamente
@@ -50,6 +53,10 @@ public class Ejecutar {
 
 		iniciaKromi.kromi(tableroInicio.entregaTabla());
 		iniciaKromi.tableroKromi();
+		entCorKromi1=iniciaKromi.entraLKromi1();
+		entCorKromi2=iniciaKromi.entraLKromi2();
+		entCorKromi3=iniciaKromi.entraLKromi3();
+		
 
 	}
 	

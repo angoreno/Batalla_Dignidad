@@ -9,33 +9,37 @@ public class Kromi extends Carro {
 
 	private String tabla[][];
 
-	int kromiUbi1[]= new int [3];
-	int kromiUbi2[]= new int [4];
-	int kromiUbi3[]= new int [4];
+	int ubi1[] = new int[3];
+	int ubi2[] = new int[3];
+	int ubi3[] = new int[3];
+	
+	String kromiUbi1;
+	String kromiUbi2;
+	String kromiUbi3;
 	int a;
 	int b;
 
 	Random corde = new Random();
+	Vida vida=new Vida();
 	// int[] kromiUbi= {};
 
 	ArrayList<String> kromiUbi = new ArrayList<String>(3);
 
 	public Kromi() {
-		
-		
-		
-		
-		
+
 	}
 
 	public void kromi(String[][] tab) {
 
 		int cont = 0;
+		String ubi="";
 
 		do {
 
 			a = 1 + corde.nextInt(13);
 			b = 1 + corde.nextInt(15);
+			
+			ubi=a +"," + b;
 
 			if (tab[a][b].equals("~") && tab[a + 1][b].equals("~") && tab[a + 2][b].equals("~")) {
 
@@ -47,31 +51,18 @@ public class Kromi extends Carro {
 				tab = tab;
 
 				if (cont == 1) {
-					kromiUbi1[0] = cont;
-					kromiUbi1[1] = a;
-					kromiUbi1[2] = b;
-
-					if (cont == 2) {
-
-						kromiUbi2[0] = cont;
-						kromiUbi2[1] = a;
-						kromiUbi2[2] = b;
-
-						if (cont == 3) {
-
-							kromiUbi3[0] = cont;
-							kromiUbi3[1] = a;
-							kromiUbi3[2] = b;
-						}
-
-					}
+					
+					kromiUbi1=a+","+b;
 				}
 
-				/*
-				 * String a1 = ""+a; String b1 = ""+b;
-				 * 
-				 * kromiUbi.add(a1);
-				 */
+				if (cont == 2) {
+
+					kromiUbi2=a+","+b;
+				}
+				if (cont == 3) {
+
+					kromiUbi3=a+","+b;
+				}
 
 			}
 		} while (cont < 3);
@@ -85,18 +76,17 @@ public class Kromi extends Carro {
 		return tabla;
 	}
 
-	//salida de los 3 objetos
-	public int[] entraLKromi1() {
+	public String entraLKromi1() {
 
 		return kromiUbi1;
 	}
 
-	public int[] entraLKromi2() {
+	public String entraLKromi2() {
 
 		return kromiUbi2;
 	}
 
-	public int[] entraLKromi3() {
+	public String entraLKromi3() {
 
 		return kromiUbi3;
 	}
