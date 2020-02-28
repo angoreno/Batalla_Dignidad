@@ -1,7 +1,7 @@
 package dignidad;
 
 public class Vida {
-	
+
 	/**
 	 * Cuenta puntos y comprueba la eliminación de los vehiculos
 	 */
@@ -50,8 +50,11 @@ public class Vida {
 		cordKromi1 = cordK1;
 
 		int val1 = devVal(cordKromi1, cord1, cord2);
-		
-		val1=val1+cord1;
+
+		System.out.println(cord1);
+		System.out.println(val1);
+
+		val1 = val1 + cord1;
 
 		cordCatena1 = (val1) + "," + cord2;
 
@@ -125,37 +128,49 @@ public class Vida {
 		int pos = 0;
 
 		String cordCat3 = b + "," + c;// original
-		String cordCat1 = (b - 2) + "," + c;
-		String cordCat2 = (b - 1) + "," + c;
-		String cordCat4 = (b + 1) + "," + c;
-		String cordCat5 = (b + 2) + "," + c;
+		int b1 = b - 2;
+		String cordCat1 = b1 + "," + c;
+		int b2 = b - 1;
+		String cordCat2 = b2 + "," + c;
+		int b3 = b + 1;
+		String cordCat4 = b3 + "," + c;
+		int b4 = b + 2;
+		String cordCat5 = b4 + "," + c;
 
-		if (a.equals(cordCat1)) {
+		System.out.println("valor de a " + a);
+		System.out.println("valor de cor 1: " + cordCat1);
+		System.out.println("valor de cor 2: " + cordCat2);
+		System.out.println("valor de cor 3: " + cordCat3);
+		System.out.println("valor de cor 4: " + cordCat4);
+		System.out.println("valor de cor 5: " + cordCat5);
+
+		if (cordCat1.equals(a)==true){
 			pos = -2;
 		} else {
 			pos = 9;
 		}
-		if (a.equals(cordCat2)) {
+		if (cordCat2.equals(a)==true) {
 			pos = -1;
 		} else {
 			pos = 9;
 		}
-		if (a.equals(cordCat3)) {
+		if (cordCat3.equals(a)==true) {
 			pos = 0;
 		} else {
 			pos = 9;
 		}
-		if (a.equals(cordCat4)) {
+		if (cordCat4.equals(a)==true) {
 			pos = +1;
 		} else {
 			pos = 9;
 		}
-		if (a.equals(cordCat5)) {
+		if (cordCat5.equals(a)==true) {
 			pos = +2;
 		} else {
 			pos = 9;
 		}
 
+		System.out.println("este es el factor " + pos);
 		return pos;
 	}
 
